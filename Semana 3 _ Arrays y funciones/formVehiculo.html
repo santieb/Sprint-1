@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehiculos</title>
+</head>
+<body>
+    <form name="form" method="GET">
+        <label type="text">Ingrese una marca de un Vehículo</label>
+        <input type="text" id="marca" name="marca">
+
+        <br><br>
+
+        <button type="button" name="add" id="add">Añadir</button>
+
+        <button type="button" name="deleteFirst" id="deleteFirst">Borrar primero</button>
+
+        <button type="button" name="deleteLast" id="deleteLast">Borrar último</button>
+        
+    </form>
+    <h1>Lista de Vehículos: </h1>
+    <br>
+    <div id="lista"></div>
+    <script type="text/javascript">
+ 
+    let marcas = [];
+    const btnAdd = document.getElementById("add");
+    btnAdd.addEventListener("click", function(){         
+        let marca = document.getElementById("marca").value;
+        marcas.push(marca);
+        document.getElementById("lista").innerHTML = marcas;
+    });
+
+    const btnDeleteFirst = document.getElementById("deleteFirst");
+    btnDeleteFirst.addEventListener("click", function(){         
+        marcas.shift();
+        document.getElementById("lista").innerHTML = marcas;
+    });
+
+    const btnDeleteLast = document.getElementById("deleteLast");
+    btnDeleteLast.addEventListener("click", function(){         
+        marcas.pop();
+        document.getElementById("lista").innerHTML = marcas;
+    });
+    
+    </script>
+</body>
+</html>

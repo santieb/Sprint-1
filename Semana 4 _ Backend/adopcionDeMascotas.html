@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    let perros = [];
+
+    class Perros{
+        constructor(nombre,edad,raza,estado,color){
+            this.nombre = nombre;
+            this.edad = edad;
+            this.raza = raza;
+            this.estado = estado;
+            this.color = color;
+        }
+        modEstado(estado){
+            estado = prompt("Ingrese el estado nuevo del perro");
+            this.estado = estado;
+        }
+        infEstado(){
+            return `estado: ${this.estado}`
+        }
+    }
+    const ingresarPerro = () => {
+        nombre = prompt("Ingrese el nombre del perro");
+        edad = prompt("Ingrese la edad del perro");
+        raza = prompt("Ingrese la raza del perro");
+        estado = prompt("Ingrese el estado del perro");
+        color = prompt("Ingrese el color del perro");
+
+</script> 
+</body>
+</html>

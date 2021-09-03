@@ -1,0 +1,9 @@
+El resultado de 4 - 2 es = 2
+
+El resultado de 6 - 3 es = 3
+
+El resultado de 2 * 2 es = 4
+
+El resultado de 10 / 2 es = 5
+
+No se puede dividir por 0 

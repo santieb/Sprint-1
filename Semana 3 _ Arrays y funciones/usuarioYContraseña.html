@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario y contraseña</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+    let datos = [['daniel', '12345'], ['juan', '1234'], ['pepe', '123456']];
+
+    const validarDatos = (username, password) => {
+        for(i=0;i<3;i++){
+            if (datos[i][0] === username && datos[i][1] === password){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    let username = prompt("Ingrese tu nombre de usuario: ");
+    let password = prompt("Ingrese su contraseña: ");
+    
+    console.log(validarDatos(username, password));
+
+    </script>
+</body>
+</html>

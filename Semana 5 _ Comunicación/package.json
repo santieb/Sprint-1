@@ -1,0 +1,31 @@
+{
+  "name": "semana5",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/santieb/mi-primera-api.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Santiago Barreto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/santieb/mi-primera-api/issues"
+  },
+  "homepage": "https://gitlab.com/santieb/mi-primera-api#readme",
+  "description": "",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "cool-images": "^1.0.3",
+    "express": "^4.17.1",
+    "file-system": "^2.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}

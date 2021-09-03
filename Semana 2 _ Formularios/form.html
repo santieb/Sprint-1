@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <h1>¿Puedes conducir?</h1>
+    <br/><br/>
+    <form name="form" method="GET">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre">
+
+        <br/><br/>
+
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" name="apellido">
+        
+        <br/><br/>
+
+        <label for="edad">Edad</label>
+        <input type="text" id="edad" name="edad">
+
+        <br/><br/>
+
+        <label for="licencia">licencia</label>
+        <select id="licencia" name="licencia">
+            <option value="Si">Si</option>
+            <option value="No">No</option>
+        </select>
+
+        <br/><br/>
+
+        <label for="fecha_expiracion">Fecha de expiracion(año)</label>
+        <input type="text" id="fecha_expiracion" name="fecha_expiracion">
+
+        <br/><br/>
+
+        <button type="button" name="resultados" id="resultados">Resultados</button>
+
+        <h2>Resultado:
+            <div id="res"></div>
+        </h2>
+    </form>
+    
+    <script type="text/javascript">
+        
+    const btn = document.getElementById("resultados");
+
+    btn.addEventListener("click",function(){
+
+    let nombre = document.getElementById("nombre").value;
+    let apellido = document.getElementById("apellido").value;
+    let edad = document.getElementById("edad").value;
+    let fecha = document.getElementById("fecha_expiracion").value;
+    let licencia = document.getElementById("licencia").value;
+
+    if(nombre == "" || apellido =="" || edad == "" || licencia == "" || fecha == ""){
+        resultado = `${nombre} ${apellido} No ha llenado todos los campos del formulario, por favor vuelva a intentarlo.`;
+    }
+    else if(edad >= 18 && licencia === "Si" && fecha > 2021){
+            resultado = `${nombre} ${apellido} Cumple con las condiciones para conducir.`;
+    }
+    else{
+        resultado = `${nombre} ${apellido} No cumple con las condiciones para conducir.`;
+    }
+    document.getElementById("res").innerHTML = resultado;
+    });
+   
+    </script>
+</body>
+</html>
