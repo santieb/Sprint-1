@@ -1,38 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script type="text/javascript">
-    let perros = [];
+      let perros = []
 
-    class Perros{
-        constructor(nombre,edad,raza,estado,color){
-            this.nombre = nombre;
-            this.edad = edad;
-            this.raza = raza;
-            this.estado = estado;
-            this.color = color;
+      class Perros {
+        constructor(nombre, edad, raza, estado, color) {
+          this.nombre = nombre
+          this.edad = edad
+          this.raza = raza
+          this.estado = estado
+          this.color = color
         }
-        modEstado(estado){
-            estado = prompt("Ingrese el estado nuevo del perro");
-            this.estado = estado;
+        modEstado(estado) {
+          estado = prompt("Ingrese el estado nuevo del perro")
+          this.estado = estado
         }
-        infEstado(){
-            return `estado: ${this.estado}`
+        infEstado() {
+          return `estado: ${this.estado}`
         }
-    }
-    const ingresarPerro = () => {
-        nombre = prompt("Ingrese el nombre del perro");
-        edad = prompt("Ingrese la edad del perro");
-        raza = prompt("Ingrese la raza del perro");
-        estado = prompt("Ingrese el estado del perro");
-        color = prompt("Ingrese el color del perro");
+      }
+      const ingresarPerro = () => {
+        nombre = prompt("Ingrese el nombre del perro")
+        edad = prompt("Ingrese la edad del perro")
+        raza = prompt("Ingrese la raza del perro")
+        estado = prompt("Ingrese el estado del perro")
+        color = prompt("Ingrese el color del perro")
+      }
 
-</script> 
-</body>
+      do {
+        ingresarPerro()
+
+        const perro = new Perros(nombre, edad, raza, estado, color)
+        perros.push(perro);
+
+        console.log(perro.infEstado());
+      } while (window.confirm("Desea agaregar mas?"))
+
+      let perrosEnAdopcion = []
+      let perrosEnProceso = []
+      let perrosAdoptados = []
+
+      for (let i = 0; i < perros.length; i++) {
+        if (perros[i].estado == "en adopcion") perrosEnAdopcion.push(perros[i])
+        if (perros[i].estado == "adoptado") perrosAdoptados.push(perros[i])
+        if (perros[i].estado == "proceso") perrosEnProceso.push(perros[i])
+      }
+
+      console.log("Perros en adopcion");
+      for (let i = 0; i < perrosEnAdopcion.length; i++) {
+        console.log(perrosEnAdopcion[i])
+      }
+
+      console.log("Perros en Proceso")
+      for (let i = 0; i < perrosEnProceso.length; i++) {
+        console.log(perrosEnProceso[i])
+      }
+
+      console.log("Perros Adoptados")
+      for (let i = 0; i < perrosAdoptados.length; i++) {
+        console.log(perrosAdoptados[i])
+      }
+    </script>
+  </body>
 </html>
